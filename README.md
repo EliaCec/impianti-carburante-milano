@@ -49,10 +49,15 @@ L'url per effettuare le richieste al server è: https://impianti-carburante-mila
 <h1>FUNZIONALITA'</h1>
 Le funzionalità esposte sono:
 - <b>get</b> (/getTutto) per cercare tutti gli impianti presenti nel comune di Milano (GUI: /menu)
+
 - <b>get</b> (/getImpianto) per cercare uno specifico impianto tramite il codice univoco (GUI: /cercaImpianto)
+
 - <b>get</b> (/getImpiantiTamoil) per cercare tutti gli impianti della bandiera Tamoil (GUI: /cercaImpiantiTamoil)
+
 - <b>post</b> (/postImpianto) per aggiungere un nuovo impianto (tutti i campi devono essere compilati e il codice immesso deve essere diverso da quelli già   esistenti) (GUI: /aggiungiImpianto)
+
 - <b>delete</b> (/eliminaImpianto) per cancellare un impianto tramite il codice univoco
+
 - <b>put</b> (/modificaNomeImpianto) per modificare il nome di un impianto già esistente (la ricerca viene effettuata tramite il codice univoco)
 
 Tutte le seguenti richieste vengono effettuate tramite il protocollo HTTP e l'intestazione contiene il content-type che nella maggior parte dei casi è 'application/json' o 'text/plain' (viene utilizzato anche 'text/html' solamente per le get dei render delle GUI).
