@@ -48,36 +48,36 @@ Esempi di utiizzo del Web Service:
 2) <b>richiesta get all'endpoint menu:</b>
   - richiesta: di tutti gli impianti presenti nel comune di Milano (nel caso in cui non ci fossero), il risultato atteso è la visualizzazione di un             messaggio di errore
   - risposta: <img width="1440" alt="menuFail" src="https://user-images.githubusercontent.com/97044668/171442062-651352f9-344d-45bf-a2fc-ed0a2555101c.png">
-4) <b>richiesta get all'endpoint /cercaImpianto:</b>
+3) <b>richiesta get all'endpoint /cercaImpianto:</b>
   - richiesta: di un impianto presente (es. 37506), il risultato atteso è la visualizzazione di tutte le relative informazioni nella medesima         pagina e la localizzazione di tale impianto in una mappa geografica
   - risposta: <img width="1440" alt="cercaImpiantoSuccess" src="https://user-images.githubusercontent.com/97044668/171384146-4cb0dd1a-2292-4202-81ea-b86aa500ebf4.png">
-5) <b>richiesta get all'endpoint /cercaImpianto:</b>
+4) <b>richiesta get all'endpoint /cercaImpianto:</b>
   - richiesta: di un impianto che non è presente (es. 1), il risultato atteso è la comparsa di una scritta di errore che suggerisce all'utente di     ricontrollare la correttezza del codice
   - risposta: <img width="1440" alt="cercaImpiantoFail" src="https://user-images.githubusercontent.com/97044668/171384605-edbe86fe-6017-4f6c-a2e1-a0fb73d8dea3.png">
-6) <b>richiesta get all'endpoint /cercaImpiantiTamoil:</b>
+5) <b>richiesta get all'endpoint /cercaImpiantiTamoil:</b>
   - richiesta: di tutti gli impianti appartenenti alla bandiera Tamoil, il risultato atteso è la lista di tutti gli impianti visualizzati su una     mappa     e le relative informzioni elencate in una tabella
   - risposta: <img width="1440" alt="cercaImpiantiTamoilSuccess" src="https://user-images.githubusercontent.com/97044668/171385220-1f1908f9-33c2-4efb-ab95-47c674086231.png">
-7) <b>richiesta get all'endpoint /cercaImpiantiTamoil:</b>
+6) <b>richiesta get all'endpoint /cercaImpiantiTamoil:</b>
   - richiesta: di tutti gli impianti Tamoil (quando non ne è presente nessuno), il risultato atteso è un messaggio di errore che invita all'utente di           aggiungerne uno nuovo
   - risposta: <img width="1440" alt="cercaImpiantiTamoilFail" src="https://user-images.githubusercontent.com/97044668/171385822-4ce1e984-b005-4b3e-8998-9d3668ebff96.png">
-8) <b>richiesta post all'endpoint /aggiungiImpianto:</b>
+7) <b>richiesta post all'endpoint /aggiungiImpianto:</b>
   - richiesta: il body contiene tutte le informazioni relative all'impianto (obbligatorie), il risultato aspettato è un messaggio di conferma positivo
     <img width="1440" alt="aggiungiImpiantoSuccess1" src="https://user-images.githubusercontent.com/97044668/171387055-66cfe50e-226e-4aad-bd56-db07a132b54f.png">
   - risposta: <img width="1440" alt="aggiungiImpiantoSuccess2" src="https://user-images.githubusercontent.com/97044668/171387081-22343f6b-455a-4fff-bb8e-d0a10c8acdaf.png">
-7) <b>richiesta post all'endpoint /aggiungiImpianto:</b>
+8) <b>richiesta post all'endpoint /aggiungiImpianto:</b>
   - richiesta: il body contiene tutte le informazioni relative all'impianto (obbligatorie, ma il    codice è già presente in quelli esistenti), il risultato è     un messaggio di errore            suggerendo all'utente di modificare l'id
    <img width="1440" alt="aggiungiImpiantoFail1" src="https://user-images.githubusercontent.com/97044668/171428232-b601fc13-e1d2-4c13-a58d-aeba561700d6.png">
   - risposta: <img width="1440" alt="aggiungiImpiantoFail2" src="https://user-images.githubusercontent.com/97044668/171428270-5d53a671-393d-4cec-bc65-e6a4dfd0853f.png">
-8) <b>richiesta delete all'enpoint /eliminaImpianto:</b>
+9) <b>richiesta delete all'enpoint /eliminaImpianto:</b>
   - richiesta: dell'eliminazione di un impianto specificando un id esistente (es. 1234), il risultato atteso è un messaggio che conferma l'avvenuta             eliminazione
   - risposta: <img width="1012" alt="eliminaImpiantoSuccess" src="https://user-images.githubusercontent.com/97044668/171429237-3d071c9f-6e12-4f9a-a5c3-bd25231b5186.png">
-9) <b>richiesta delete all'endpoint /eliminaImpianto:</b>
+10) <b>richiesta delete all'endpoint /eliminaImpianto:</b>
   - richiesta: dell'eliminazione di un impianto specificando un id non presente (es. 7890), il risultato atteso è un messaggio di errore che suggerisce         all'utente di controllare la correttezza dell'id
   - risposta: <img width="1006" alt="eliminaImpiantoFail" src="https://user-images.githubusercontent.com/97044668/171429956-da51d24a-6b11-4d37-8d3b-7e2260ca2953.png">
-10) <b>richiesta put all'endpoint /modificaNomeImpianto:</b>
+11) <b>richiesta put all'endpoint /modificaNomeImpianto:</b>
   - richiesta: della modifica del nome di un impianto (specificando l'id esistente), il risultato atteso è un messaggio che conferma l'avvenuta modifica
   - risposta: <img width="1004" alt="modificaNomeImpiantoSuccess" src="https://user-images.githubusercontent.com/97044668/171439061-b0f69323-acaa-42b2-a6ad-734475afb751.png">
-11) <b>richiesta put all'endpoint /modificaNomeImpianto:</b>
+12) <b>richiesta put all'endpoint /modificaNomeImpianto:</b>
   - richiesta: della modifica del nome di un impianto (specificando un id inesistente), il risultato atteso è un messaggio di errore che invita l'utente a     ricontrollare l'id
   - risposta: <img width="1011" alt="modificaNomeImpiantoFail" src="https://user-images.githubusercontent.com/97044668/171439479-293371aa-e03e-49e7-9e67-1a9de8849797.png">
 
