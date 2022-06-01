@@ -4,7 +4,7 @@ Progetto Piattaforme Digitali per la Gestione del Territorio
 Elia Ceccolini, 308666
 Impianti del carburante per autotrazione nel comune di Milano
 
-L’obiettivo del progetto è creare un Web Service che espone delle APIs per l’interrogazione e l’elaborazione di un elenco dati riguardanti gli impianti dei carburanti per autotrazione localizzati all’interno del comune di Milano. Per ogni impianto si tiene traccia di:
+L’<br>obiettivo</br> del progetto è creare un Web Service che espone delle APIs per l’interrogazione e l’elaborazione di un elenco dati riguardanti gli impianti dei carburanti per autotrazione localizzati all’interno del comune di Milano. Per ogni impianto si tiene traccia di:
 - Il codice univoco (idImpianto);
 - Il gestore;
 - La bandiera;
@@ -65,6 +65,11 @@ Esempi di utiizzo del Web Service:
   - richiesta: dell'eliminazione di un impianto specificando un id esistente (es. 1234), il risultato atteso è un messaggio che conferma l'avvenuta             eliminazione
   - risposta: <img width="1012" alt="eliminaImpiantoSuccess" src="https://user-images.githubusercontent.com/97044668/171429237-3d071c9f-6e12-4f9a-a5c3-bd25231b5186.png">
 9) richiesta delete all'endpoint /eliminaImpianto:
-  - richiesta: dell'eliminazione di un impianto specificando un id non presente (es. 7890), il risultato atteso è un messaggio di errore che suggerisce all'utente di controllare la correttezza dell'id
+  - richiesta: dell'eliminazione di un impianto specificando un id non presente (es. 7890), il risultato atteso è un messaggio di errore che suggerisce         all'utente di controllare la correttezza dell'id
   - risposta: <img width="1006" alt="eliminaImpiantoFail" src="https://user-images.githubusercontent.com/97044668/171429956-da51d24a-6b11-4d37-8d3b-7e2260ca2953.png">
-10) richiesta all'endpoint 
+10) richiesta put all'endpoint /modificaNomeImpianto
+  - richiesta: della modifica del nome di un impianto (specificando l'id esistente), il risultato atteso è un messaggio che conferma l'avvenuta modifica
+  - risposta: <img width="1004" alt="modificaNomeImpiantoSuccess" src="https://user-images.githubusercontent.com/97044668/171439061-b0f69323-acaa-42b2-a6ad-734475afb751.png">
+11) richiesta put all'endpoint /modificaNomeImpianto:
+  - richiesta: della modifica del nome di un impianto (specificando un id inesistente), il risultato atteso è un messaggio di errore che invita l'utente a     ricontrollare l'id
+  - risposta: <img width="1011" alt="modificaNomeImpiantoFail" src="https://user-images.githubusercontent.com/97044668/171439479-293371aa-e03e-49e7-9e67-1a9de8849797.png">
