@@ -7,6 +7,7 @@ Impianti del carburante per autotrazione nel comune di Milano
 
 <h1>OBIETTIVO</h1>
 L’<b>obiettivo</b> del progetto è creare un Web Service che espone delle APIs per l’interrogazione e l’elaborazione di un elenco dati riguardanti gli impianti dei carburanti per autotrazione localizzati all’interno del comune di Milano. Per ogni impianto si tiene traccia di:
+
 - Il codice univoco (idImpianto);
 
 - Il gestore;
