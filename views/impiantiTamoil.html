@@ -1,0 +1,125 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title id="titolo">Impianti Tamoil</title>
+    <!-- <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon"> -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+    <style>
+        #div1 {
+            margin:10px;
+            font-size:1.25em;
+        }
+        table {
+            border-collapse:collapse;
+            border:1px solid #7f7f7f;
+        }
+        td {
+            border:1px solid #7f7f7f;
+            width:50px;height:50px;
+            text-align:center;
+        }
+        th {
+            border:1px solid #7f7f7f;
+            width:50px;height:50px;
+            text-align:center;
+        }
+      #mapid { height: 400px; }
+    </style>
+  </head>
+  <body style="background-color:F5F4EF">
+    <h1>Impianti della Tamoil nel comune di Milano:</h1>
+    <p>
+      <div id="mapid"></div>
+    </p>
+    <div id="error"></div>
+    <p>
+      <div id="tab"></div>
+    </p>
+
+    <script>
+      const attribution ='&copy; <a href="htts://www.openstreetmap.org/copyright"> OpenStreetMap </a>contributors';
+      const tUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+      const tiles = L.tileLayer(tUrl, {attribution})
+      var map = L.map('mapid');
+      tiles.addTo(map);
+      const latMilano = 45.4613;
+      const longMilano = 9.1595;
+      map.setView([latMilano, longMilano], 11);
+      
+      // funzione che invoca la funzione per raccogliere i dati e le funzioni che creano la tabella e la mappa
+      async function creaTabMap() {
+        let impianti = await setup(); // dati da visualizzare nella tabella e nella mappa
+        if (impianti[0] == null)
+          document.getElementById('error').innerHTML = "Impossibile trovare impianti della Tamoil, prova ad aggiungerne uno!";
+        else {
+          creaTabella(impianti);
+          creaMappa(impianti);
+        }
+      }
+      
+      // funzione che fa la request al server e salva i dati in una lista
+      async function setup() {
+        let impianti = [];
+        const response = await fetch('/getImpiantiTamoil');
+        const data = await response.json(); 
+        for (i = 0; i < data.length; i++) {
+          impianti.push(data[i]);
+        }
+        return impianti;
+      }
+      
+      // funzione che formatta i dati nella tabella
+      async function creaTabella(impianti) {
+        let headers = ['idImpianto', 'Gestore', 'Bandiera', 'Tipo Impianto', 'Nome Impianto', 'Indirizzo', 'Comune', 'Provincia', 'MUNICIPIO', 'ID_NIL', 'NIL', 'Longitudine', 'Latitudine', 'Location'];
+        var tbl = document.createElement("table");
+        // creazione righe intestazione tabella
+        var headerRow = document.createElement("tr");
+        for (var i = 0; i < headers.length - 1; i++) {
+          var cell = document.createElement("th");
+          cell.appendChild(document.createTextNode(headers[i]));
+          headerRow.appendChild(cell);
+        }
+        tbl.appendChild(headerRow);
+        // creazione righe dei dati
+        for (var i = 0; i < impianti.length; i++) {
+          var row = document.createElement("tr");
+          var contenutoRiga = impianti[i];
+          //creazione celle
+          for (var j = 0; j < headers.length - 1; j++) {
+            var cell = document.createElement("td");
+            var contenutoCella = document.createTextNode(contenutoRiga[headers[j]]);
+            cell.appendChild(contenutoCella);
+            row.appendChild(cell);
+          }
+          tbl.appendChild(row);
+        }
+        document.getElementById('tab').appendChild(tbl);
+      }
+      
+      // funzione che visualizza tutti i marker nella mappa
+      async function creaMappa(impianti) {
+        for (i = 0; i < impianti.length; i++) {
+          console.log(impianti[i]);
+          var long = parseFloat(impianti[i]['Longitudine']);
+          var lat = parseFloat(impianti[i]['Latitudine']);
+          var descrizione = "idImpianto: " + impianti[i]['idImpianto'] + "<br>" + "nome: " + impianti[i]['Nome Impianto'];
+          var markerStruttura = new L.LatLng(lat, long);
+          var marker = new L.Marker(markerStruttura);
+          map.addLayer(marker);
+          marker.bindPopup(descrizione);
+        }
+      }
+      
+      // event listener per richiamare funzione creaTabMap
+      window.onload = creaTabMap;
+    </script>
+  </body>
+</html>

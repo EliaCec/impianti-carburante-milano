@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>MENU</title>
+    <!-- <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon"> -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin=""/>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+   integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+   crossorigin=""></script>
+    <style>
+      #mapid { height: 650px;}
+    </style>
+  </head>
+  <body style="background-color:F5F4EF">
+    <h1>Impianti del carburante per autotrazione nel comune di Milano</h1>
+    <!-- link per cercare impianto tramite Id -->
+    <form action="https://impianti-carburante-milano.glitch.me/cercaImpianto" target="_blank">
+      <div style="float:left; width:190px; height:50px;">
+        <button type="submit">Cerca impianto tramite Id</button>
+      </div>
+    </form>
+    <!-- link per cercare impianti Tamoil -->
+    <form action="https://impianti-carburante-milano.glitch.me/cercaImpiantiTamoil" target="_blank">
+      <div style="float:left; width:180px; height:50px;">
+        <button>Cerca impianti Tamoil</button>
+      </div>
+    </form>
+    <!-- link per aggiungere un nuovo impianto -->
+    <form action="https://impianti-carburante-milano.glitch.me/aggiungiImpianto" target="_blank">
+      <div style="float:left; width:190px; height:50px;">
+        <button>Inserisci un nuovo impianto</button>
+      </div>
+    </form>
+    <b><div id="error" style="float:left; width:300; height:50px"></div></b>
+    <div style="clear:both"></div>
+    <div id="mapid"></div>
+    
+    <script>
+      window.onload = creaMappa;
+      
+      const attribution ='&copy; <a href="htts://www.openstreetmap.org/copyright"> OpenStreetMap </a>contributors';
+      const tUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+      const tiles = L.tileLayer(tUrl, {attribution})
+      var map = L.map('mapid');
+      tiles.addTo(map);
+      const latMilano = 45.4613;
+      const longMilano = 9.1595;
+      map.setView([latMilano, longMilano], 11);
+      
+      async function creaMappa() {
+        const response = await fetch('/getTutto');
+        const result = await response.json();
+        if (result[0] == null) {
+          document.getElementById('error').innerHTML = "Non è presente alcun impianto!";
+        } else {
+          for (var i = 0; i < result.length; i++) {
+            var long = parseFloat(result[i]['Longitudine']);
+            var lat = parseFloat(result[i]['Latitudine']);
+            if (!isNaN(long) && !isNaN(lat)) { // controllo conversione coordinate
+              var descrizione = "idImpianto: " + result[i]['idImpianto'] + "<br>" + "nome: " + result[i]['Nome Impianto'];
+              var markerStruttura = new L.LatLng(lat, long);
+              var marker = new L.Marker(markerStruttura);
+              map.addLayer(marker);
+              marker.bindPopup(descrizione);
+            }
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

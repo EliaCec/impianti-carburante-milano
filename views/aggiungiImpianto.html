@@ -1,0 +1,107 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  </head>
+  <body style="background-color:F5F4EF">
+    <h1>Aggiungi un nuovo impianto nel comune di Milano:</h1>
+    <!-- form per request -->
+    <form action="https://impianti-carburante-milano.glitch.me/postImpianto" method="POST" target="_blank">
+      <p>
+        <div class="form-group">
+          <label for="idImpianto">ID:</label>
+          <input type="number" class="form-control" name="idImpianto" required>
+        </div>
+      </p>
+      <p>
+        <div class="form-group">
+          <label for="Gestore">Gestore:</label>
+          <input class="form-control" name="Gestore" required>
+        </div>
+      </p>
+      <p>
+        <div class="form-group">
+          <label for="Bandiera">Bandiera:</label>
+          <input class="form-control" name="Bandiera" required>
+        </div>
+      </p>
+      <p>
+        <div class="form-group">
+          <label for="Tipo Impianto">Tipo:</label>
+          <input class="form-control" name="Tipo Impianto" required>
+        </div>
+      </p>
+      <p>
+        <div class="form-group">
+          <label for="Nome Impianto">Nome:</label>
+          <input class="form-control" name="Nome Impianto" required>
+        </div>
+      </p>
+      <p>
+        <div class="form-group">
+          <label for="Indirizzo">Indirizzo:</label>
+          <input class="form-control" name="Indirizzo" required>
+        </div>  
+      </p>
+      <p>
+        <div class="form-group">
+          <label for="Comune">Comune:</label>
+          <input class="form-control" value="MILANO" name="Comune" readonly>
+        </div>  
+      </p>
+      <p>
+        <div class="form-group">
+          <label for="Provincia">Provincia:</label>
+          <input class="form-control" value="MI" name="Provincia" readonly>
+        </div>  
+      </p>
+      <p>
+        <div class="form-group">
+          <label for="MUNICIPIO">Numero municipio:</label>
+          <input type="number" class="form-control" name="MUNICIPIO" required>
+        </div>
+      </p>
+      <p>
+        <div class="form-group">
+          <label for="ID-NIL">ID-NIL:</label>
+          <input type="number" class="form-control" name="ID_NIL" required>
+        </div>
+      </p>
+      <p>
+        <div class="form-group">
+          <label for="NIL">NIL:</label>
+          <input class="form-control" name="NIL" required>
+        </div>  
+      </p>
+      <p>
+        <div class="form-group">
+          <label for="Longituine">Longitudine:</label>
+          <input class="form-control" name="Longitudine" id="Longitudine" required>
+        </div>
+      </p>
+      <p>
+        <div class="form-group">
+          <label for="Latitudine">Latitudine:</label>
+          <input class="form-control" name="Latitudine" id="Latitudine" required>
+        </div>
+      </p>
+      <p>
+        <div class="form-group">
+          <input type="hidden" class="form-control" name="Location" id="Location">
+        </div>
+      </p>
+      <p>
+        <button type="submit" class="btn" onclick="getValueInput()">Aggiungi impianto</button>
+        <button type="reset" class="btn">Annulla</button> 
+      </p>
+      <script>
+        // funzione per creare il campo location in automatico
+        function getValueInput() {
+          let inputValue = '(' + document.getElementById("Latitudine").value + ', ' + document.getElementById("Longitudine").value + ')';
+          document.getElementById("Location").value = inputValue;
+        }
+      </script>
+    </form>
+  </body>
+</html>
