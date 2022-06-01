@@ -8,19 +8,34 @@ Impianti del carburante per autotrazione nel comune di Milano
 <h1>OBIETTIVO</h1>
 L’<b>obiettivo</b> del progetto è creare un Web Service che espone delle APIs per l’interrogazione e l’elaborazione di un elenco dati riguardanti gli impianti dei carburanti per autotrazione localizzati all’interno del comune di Milano. Per ogni impianto si tiene traccia di:
 - Il codice univoco (idImpianto);
+
 - Il gestore;
+
 - La bandiera;
+
 - Il tipo;
+
 - Il nome;
+
 - L’indirizzo;
+
 - Il comune;
+
 - La provincia;
+
 - Il numero del municipio;
+
 - Il codice NIL;
+
 - Il NIL (Nucleo di Identità Locale, definibile anche come quartiere);
+
 - Longitudine;
+
 - Latitudine;
+
 - Location (unione della longitudine e della latitudine separati da una virgola e racchiusi tra parentesi tonde).
+
+
 Per l'implementazione del servizio si è utilizzato il sito www.glitch.com, il codice per l'implementazione del Web Service è racchiuso nel file nominato server.js e le interfacce grafiche nei file:
 - aggiungiImpianto.html
 - cercaImpianto.html
