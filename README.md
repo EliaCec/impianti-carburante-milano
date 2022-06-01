@@ -58,5 +58,13 @@ Esempi di utiizzo del Web Service:
     <img width="1440" alt="aggiungiImpiantoSuccess1" src="https://user-images.githubusercontent.com/97044668/171387055-66cfe50e-226e-4aad-bd56-db07a132b54f.png">
   - risposta: <img width="1440" alt="aggiungiImpiantoSuccess2" src="https://user-images.githubusercontent.com/97044668/171387081-22343f6b-455a-4fff-bb8e-d0a10c8acdaf.png">
 7) richiesta post all'endpoint /aggiungiImpianto:
-  - richiesta: il body contiene tutte le informazioni relative all'impianto (obbligatorie, ma il codice è già presente in quelli esistenti), il risultato è     un messaggio di errore suggerendo all'utente di modificare l'id
-  - risposta: 
+  - richiesta: il body contiene tutte le informazioni relative all'impianto (obbligatorie, ma il    codice è già presente in quelli esistenti), il risultato è     un messaggio di errore            suggerendo all'utente di modificare l'id
+   <img width="1440" alt="aggiungiImpiantoFail1" src="https://user-images.githubusercontent.com/97044668/171428232-b601fc13-e1d2-4c13-a58d-aeba561700d6.png">
+  - risposta: <img width="1440" alt="aggiungiImpiantoFail2" src="https://user-images.githubusercontent.com/97044668/171428270-5d53a671-393d-4cec-bc65-e6a4dfd0853f.png">
+8) richiesta delete all'enpoint /eliminaImpianto:
+  - richiesta: dell'eliminazione di un impianto specificando un id esistente (es. 1234), il risultato atteso è un messaggio che conferma l'avvenuta             eliminazione
+  - risposta: <img width="1012" alt="eliminaImpiantoSuccess" src="https://user-images.githubusercontent.com/97044668/171429237-3d071c9f-6e12-4f9a-a5c3-bd25231b5186.png">
+9) richiesta delete all'endpoint /eliminaImpianto:
+  - richiesta: dell'eliminazione di un impianto specificando un id non presente (es. 7890), il risultato atteso è un messaggio di errore che suggerisce all'utente di controllare la correttezza dell'id
+  - risposta: <img width="1006" alt="eliminaImpiantoFail" src="https://user-images.githubusercontent.com/97044668/171429956-da51d24a-6b11-4d37-8d3b-7e2260ca2953.png">
+10) richiesta all'endpoint 
