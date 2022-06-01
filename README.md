@@ -42,7 +42,7 @@ Le ultime due funzionalità sono prive di interfaccia grafica, perciò devono es
 
 <h1>ESEMPI</h1>
 Esempi di utiizzo del Web Service:
-1) <b>richiesta get all'endpoint /menu:</b>
+1) <h2>richiesta get all'endpoint /menu:<h2>
   - richiesta di tutti gli impianti presenti attualmente nel comune di Milano, il risultato atteso è la visualizzazione di tutti gli impianti in una mappa     geografica
   - risposta: <img width="1440" alt="menu" src="https://user-images.githubusercontent.com/97044668/171383214-29fdb372-af0e-4659-9eaf-06ad5090b6a8.png">
 2) <b>richiesta get all'endpoint /cercaImpianto:</b>
