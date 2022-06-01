@@ -27,17 +27,36 @@ Per l'implementazione del servizio si è utilizzato il sito www.glitch.com, il c
 Il dataset (.json) è contenuto nel file impianti.json ed è stato reperito dal sito del governo (www.dati.gov.it) e possono essere consultati al seguente link: https://dati.gov.it/view-dataset/dataset?id=932e162f-c2dd-48a5-8641-bf16d6f1e6a5.
 
 Le funzionalità esposte sono:
-1) get (/getTutto) per cercare tutti gli impianti presenti nel comune di Milano (GUI: /menu)
-2) get (/getImpianto) per cercare uno specifico impianto tramite il codice univoco (GUI: /cercaImpianto)
-3) get (/getImpiantiTamoil) per cercare tutti gli impianti della bandiera Tamoil (GUI: /cercaImpiantiTamoil)
-4) post (/postImpianto) per aggiungere un nuovo impianto (tutti i campi devono essere compilati e il codice immesso deve essere diverso da quelli già esistenti) (GUI: /aggiungiImpianto)
-5) delete (/eliminaImpianto) per cancellare un impianto tramite il codice univoco
-6) put (/modificaNomeImpianto) per modificare il nome di un impianto già esistente (la ricerca viene effettuata tramite il codice univoco)
+- get (/getTutto) per cercare tutti gli impianti presenti nel comune di Milano (GUI: /menu)
+- get (/getImpianto) per cercare uno specifico impianto tramite il codice univoco (GUI: /cercaImpianto)
+- get (/getImpiantiTamoil) per cercare tutti gli impianti della bandiera Tamoil (GUI: /cercaImpiantiTamoil)
+- post (/postImpianto) per aggiungere un nuovo impianto (tutti i campi devono essere compilati e il codice immesso deve essere diverso da quelli già esistenti) (GUI: /aggiungiImpianto)
+- delete (/eliminaImpianto) per cancellare un impianto tramite il codice univoco
+- put (/modificaNomeImpianto) per modificare il nome di un impianto già esistente (la ricerca viene effettuata tramite il codice univoco)
 
 Tutte le seguenti richieste vengono effettuate tramite il protocollo HTTP e l'intestazione contiene il content-type che nella maggior parte dei casi è 'application/json' o 'text/plain' (viene utilizzato anche 'text/html' solamente per le get dei render delle GUI).
 Le ultime due funzionalità sono prive di interfaccia grafica, perciò devono essere effettuate da Postman.
 
 Esempi di utiizzo del Web Service:
 1) richiesta get all'endpoint /menu: 
-  - richiesta di tutti gli impianti presenti attualmente nel comune di Milano (il risultato atteso è la visualizzazione di tutti gli impianti in una mappa     geografica)
+  - richiesta di tutti gli impianti presenti attualmente nel comune di Milano, il risultato atteso è la visualizzazione di tutti gli impianti in una mappa     geografica
   - risposta: <img width="1440" alt="menu" src="https://user-images.githubusercontent.com/97044668/171383214-29fdb372-af0e-4659-9eaf-06ad5090b6a8.png">
+2) richiesta get all'endpoint /cercaImpianto:
+  - richiesta: di un impianto presente (es. 37506), il risultato atteso è la visualizzazione di tutte le relative informazioni nella medesima         pagina e la localizzazione di tale impianto in una mappa geografica
+  - risposta: <img width="1440" alt="cercaImpiantoSuccess" src="https://user-images.githubusercontent.com/97044668/171384146-4cb0dd1a-2292-4202-81ea-b86aa500ebf4.png">
+3) richiesta get all'endpoint /cercaImpianto:
+  - richiesta: di un impianto che non è presente (es. 1), il risultato atteso è la comparsa di una scritta di errore che suggerisce all'utente di     ricontrollare la correttezza del codice
+  - risposta: <img width="1440" alt="cercaImpiantoFail" src="https://user-images.githubusercontent.com/97044668/171384605-edbe86fe-6017-4f6c-a2e1-a0fb73d8dea3.png">
+4) richiesta get all'endpoint /cercaImpiantiTamoil:
+  - richiesta: di tutti gli impianti appartenenti alla bandiera Tamoil, il risultato atteso è la lista di tutti gli impianti visualizzati su una     mappa e le relative informzioni elencate in una tabella
+  - risposta: <img width="1440" alt="cercaImpiantiTamoilSuccess" src="https://user-images.githubusercontent.com/97044668/171385220-1f1908f9-33c2-4efb-ab95-47c674086231.png">
+5) richiesta get all'endpoint /cercaImpiantiTamoil:
+  - richiesta: di tutti gli impianti Tamoil (quando non ne è presente nessuno), il risultato atteso è un messaggio di errore che invita all'utente di           aggiungerne uno nuovo
+  - risposta: <img width="1440" alt="cercaImpiantiTamoilFail" src="https://user-images.githubusercontent.com/97044668/171385822-4ce1e984-b005-4b3e-8998-9d3668ebff96.png">
+6) richiesta post all'endpoint /aggiungiImpianto:
+  - richiesta: il body contiene tutte le informazioni relative all'impianto (obbligatorie), il risultato aspettato è un messaggio di conferma positivo
+    <img width="1440" alt="aggiungiImpiantoSuccess1" src="https://user-images.githubusercontent.com/97044668/171387055-66cfe50e-226e-4aad-bd56-db07a132b54f.png">
+  - risposta: <img width="1440" alt="aggiungiImpiantoSuccess2" src="https://user-images.githubusercontent.com/97044668/171387081-22343f6b-455a-4fff-bb8e-d0a10c8acdaf.png">
+7) richiesta post all'endpoint /aggiungiImpianto:
+  - richiesta: il body contiene tutte le informazioni relative all'impianto (obbligatorie, ma il codice è già presente in quelli esistenti), il risultato è     un messaggio di errore suggerendo all'utente di modificare l'id
+  - risposta: 
