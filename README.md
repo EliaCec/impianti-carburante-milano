@@ -62,7 +62,9 @@ Le funzionalità esposte sono:
 - <b>put</b> (/modificaNomeImpianto) per modificare il nome di un impianto già esistente (la ricerca viene effettuata tramite il codice univoco)
 
 Tutte le seguenti richieste vengono effettuate tramite il protocollo HTTP e l'intestazione contiene il content-type che nella maggior parte dei casi è 'application/json' o 'text/plain' (viene utilizzato anche 'text/html' solamente per le get dei render delle GUI).
+
 Le ultime due funzionalità sono prive di interfaccia grafica, perciò devono essere effettuate da Postman.
+
 Tutte le pagine html sono state progettate per lasciare l'elaborazione dei dati al server, perciò si occupano solamente della formattazione dei dati per renderli più leggibili all'occhio umano e per la creazione delle eventuali mappe geografiche (se presenti).
 
 <h1>ESEMPI</h1>
