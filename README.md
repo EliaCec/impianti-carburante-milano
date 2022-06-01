@@ -74,7 +74,7 @@ Esempi di utiizzo del Web Service:
   - richiesta: di tutti gli impianti presenti nel comune di Milano, il risultato atteso è la visualizzazione di tutti gli impianti in una mappa     geografica
   - risposta: <img width="1440" alt="menu" src="https://user-images.githubusercontent.com/97044668/171383214-29fdb372-af0e-4659-9eaf-06ad5090b6a8.png">
   
-2) <b>richiesta get all'endpoint menu:</b>
+2) <b>richiesta get all'endpoint /menu:</b>
   - richiesta: di tutti gli impianti presenti nel comune di Milano (nel caso in cui non ci fossero), il risultato atteso è la visualizzazione di un             messaggio di errore
   - risposta: <img width="1440" alt="menuFail" src="https://user-images.githubusercontent.com/97044668/171442062-651352f9-344d-45bf-a2fc-ed0a2555101c.png">
 
