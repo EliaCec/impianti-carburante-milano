@@ -39,6 +39,7 @@ Le funzionalità esposte sono:
 
 Tutte le seguenti richieste vengono effettuate tramite il protocollo HTTP e l'intestazione contiene il content-type che nella maggior parte dei casi è 'application/json' o 'text/plain' (viene utilizzato anche 'text/html' solamente per le get dei render delle GUI).
 Le ultime due funzionalità sono prive di interfaccia grafica, perciò devono essere effettuate da Postman.
+Tutte le pagine html sono state progettate per lasciare l'elaborazione dei dati al server, perciò si occupano solamente della formattazione dei dati per renderli più leggibili all'occhio umano e per la creazione delle eventuali mappe geografiche (se presenti).
 
 <h1>ESEMPI</h1>
 Esempi di utiizzo del Web Service:
@@ -80,4 +81,3 @@ Esempi di utiizzo del Web Service:
 12) <b>richiesta put all'endpoint /modificaNomeImpianto:</b>
   - richiesta: della modifica del nome di un impianto (specificando un id inesistente), il risultato atteso è un messaggio di errore che invita l'utente a     ricontrollare l'id
   - risposta: <img width="1011" alt="modificaNomeImpiantoFail" src="https://user-images.githubusercontent.com/97044668/171439479-293371aa-e03e-49e7-9e67-1a9de8849797.png">
-
