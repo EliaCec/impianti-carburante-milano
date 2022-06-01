@@ -48,6 +48,7 @@ L'url per effettuare le richieste al server è: https://impianti-carburante-mila
 
 <h1>FUNZIONALITA'</h1>
 Le funzionalità esposte sono:
+
 - <b>get</b> (/getTutto) per cercare tutti gli impianti presenti nel comune di Milano (GUI: /menu)
 
 - <b>get</b> (/getImpianto) per cercare uno specifico impianto tramite il codice univoco (GUI: /cercaImpianto)
