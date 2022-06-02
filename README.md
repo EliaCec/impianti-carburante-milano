@@ -65,7 +65,7 @@ Tutte le seguenti richieste vengono effettuate tramite il protocollo HTTP e l'in
 
 Le ultime due funzionalità sono prive di interfaccia grafica, perciò devono essere effettuate da Postman.
 
-Tutte le pagine html sono state progettate per lasciare l'elaborazione dei dati al server, perciò si occupano solamente della formattazione dei dati per renderli più leggibili all'occhio umano e per la creazione delle eventuali mappe geografiche (se presenti).
+Tutte le pagine html sono state progettate per lasciare l'elaborazione dei dati al server, perciò si occupano solamente della formattazione dei dati, in modo da renderli più leggibili all'occhio umano, e della creazione delle eventuali mappe geografiche (se presenti).
 
 <h1>ESEMPI</h1>
 
