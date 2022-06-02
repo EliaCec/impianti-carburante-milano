@@ -37,7 +37,7 @@ L’<b>obiettivo</b> del progetto è creare un Web Service che espone delle APIs
 - Location (unione della longitudine e della latitudine separati da una virgola e racchiusi tra parentesi tonde).
 
 
-Per l'implementazione del servizio si è utilizzato il sito www.glitch.com, il codice per l'implementazione del Web Service è racchiuso nel file nominato server.js e le interfacce grafiche nei file:
+Per l'implementazione del servizio si è utilizzato il sito www.glitch.com; il codice per l'implementazione del Web Service è racchiuso nel file nominato server.js e le interfacce grafiche nei file:
 - aggiungiImpianto.html
 - cercaImpianto.html
 - impiantiTamoil.html
