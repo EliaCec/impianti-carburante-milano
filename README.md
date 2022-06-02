@@ -43,7 +43,7 @@ Per l'implementazione del servizio si è utilizzato il sito www.glitch.com; il c
 - impiantiTamoil.html
 - menu.html
 
-Il dataset (.json) è contenuto nel file impianti.json ed è stato reperito dal sito del governo (www.dati.gov.it) e possono essere consultati al seguente link: https://dati.gov.it/view-dataset/dataset?id=932e162f-c2dd-48a5-8641-bf16d6f1e6a5.
+Il dataset (.json) è contenuto nel file impianti.json ed è stato reperito dal sito del governo (www.dati.gov.it). Può essere consultato al seguente link: https://dati.gov.it/view-dataset/dataset?id=932e162f-c2dd-48a5-8641-bf16d6f1e6a5.
 L'url per effettuare le richieste al server è: https://impianti-carburante-milano.glitch.me.
 
 <h1>FUNZIONALITA'</h1>
