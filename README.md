@@ -91,16 +91,16 @@ Esempi di utiizzo del Web Service:
   - risposta: <img width="1440" alt="cercaImpiantiTamoilSuccess" src="https://user-images.githubusercontent.com/97044668/171385220-1f1908f9-33c2-4efb-ab95-47c674086231.png">
 
 6) <b>richiesta get all'endpoint /cercaImpiantiTamoil:</b>
-  - richiesta: ricerca di tutti gli impianti Tamoil (quando non ne è presente nessuno); il risultato atteso è un messaggio di errore che invita all'utente     di aggiungerne uno nuovo
+  - richiesta: ricerca di tutti gli impianti Tamoil; quando non ne è presente nessuno il risultato atteso è un messaggio di errore che invita all'utente     di aggiungerne uno nuovo
   - risposta: <img width="1440" alt="cercaImpiantiTamoilFail" src="https://user-images.githubusercontent.com/97044668/171385822-4ce1e984-b005-4b3e-8998-9d3668ebff96.png">
 
 7) <b>richiesta post all'endpoint /aggiungiImpianto:</b>
-  - richiesta: il body contiene tutte le informazioni (obbligatorie) relative all'impianto da aggiungere; il risultato aspettato è un messaggio di             conferma positivo
+  - richiesta: il body contiene tutte le informazioni (obbligatorie) relative all'impianto da aggiungere; il risultato aspettato è un messaggio di             conferma dell'avvenuto inserimento 
     <img width="1440" alt="aggiungiImpiantoSuccess1" src="https://user-images.githubusercontent.com/97044668/171387055-66cfe50e-226e-4aad-bd56-db07a132b54f.png">
   - risposta: <img width="1440" alt="aggiungiImpiantoSuccess2" src="https://user-images.githubusercontent.com/97044668/171387081-22343f6b-455a-4fff-bb8e-d0a10c8acdaf.png">
 
 8) <b>richiesta post all'endpoint /aggiungiImpianto:</b>
-  - richiesta: il body contiene tutte le informazioni relative all'impianto (obbligatorie, ma il codice è già presente in quelli esistenti); il risultato     è un messaggio di errore suggerendo all'utente di modificare l'id
+  - richiesta: il body contiene tutte le informazioni relative all'impianto (obbligatorie); quando il codice è già presente in quelli esistenti il risultato atteso è un messaggio di errore che suggerisce all'utente di modificare l'id
    <img width="1440" alt="aggiungiImpiantoFail1" src="https://user-images.githubusercontent.com/97044668/171428232-b601fc13-e1d2-4c13-a58d-aeba561700d6.png">
   - risposta: <img width="1440" alt="aggiungiImpiantoFail2" src="https://user-images.githubusercontent.com/97044668/171428270-5d53a671-393d-4cec-bc65-e6a4dfd0853f.png">
 
