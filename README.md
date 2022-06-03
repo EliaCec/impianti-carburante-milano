@@ -110,7 +110,7 @@ Esempi di utiizzo del Web Service:
 
 10) <b>richiesta delete all'endpoint /eliminaImpianto:</b>
   - richiesta: eliminazione di un impianto specificando un id non presente (es. 7890); il risultato atteso è un messaggio di errore che suggerisce         all'utente di controllare la correttezza dell'id
-  - risposta: <img width="1006" alt="eliminaImpiantoFail" src="https://user-images.githubusercontent.com/97044668/171429956-da51d24a-6b11-4d37-8d3b-7e2260ca2953.png">
+  - risposta: <img width="1004" alt="eliminaImpiantoFail" src="https://user-images.githubusercontent.com/97044668/171846553-fecb8a7f-465b-4b28-a8ee-ee4c798d5ec5.png">
 
 11) <b>richiesta put all'endpoint /modificaNomeImpianto:</b>
   - richiesta: modifica del nome di un impianto (specificando l'id esistente); il risultato atteso è un messaggio che conferma l'avvenuta modifica
