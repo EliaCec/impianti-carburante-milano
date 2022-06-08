@@ -58,7 +58,7 @@ Le funzionalità esposte sono:
 
 - <b>post</b> (/postImpianto) per aggiungere un nuovo impianto (tutti i campi devono essere compilati e il codice immesso deve essere diverso da quelli già esistenti) (GUI: /aggiungiImpianto). Gli input sono tutte le informazioni (obbligatorie) relative all'impianto da aggiungere, l'output è un messaggio di conferma (o di errore se il codice univoco è già presente)
 
-- <b>delete</b> (/eliminaImpianto) per cancellare un impianto tramite il codice univoco. L'input è il codice univoco (idImpianto) dell'impianto da modificare, l'output è un messaggio di conferma (o di errore se il codice univoco non è presente)
+- <b>delete</b> (/eliminaImpianto) per cancellare un impianto tramite il codice univoco. L'input è il codice univoco (idImpianto) dell'impianto da eliminare, l'output è un messaggio di conferma (o di errore se il codice univoco non è presente)
 
 - <b>put</b> (/modificaNomeImpianto) per modificare il nome di un impianto già esistente (la ricerca viene effettuata tramite il codice univoco). Gli input sono il codice univoco dell'impianto a cui modificare il nome e il nuovo nome, l'output è un messaggio di conferma (o di errore se il codice univoco non è presente)
 
