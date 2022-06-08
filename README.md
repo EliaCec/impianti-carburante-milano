@@ -62,7 +62,9 @@ Le funzionalità esposte sono:
 
 - <b>put</b> (/modificaNomeImpianto) per modificare il nome di un impianto già esistente (la ricerca viene effettuata tramite il codice univoco). Gli input sono il codice univoco dell'impianto a cui modificare il nome e il nuovo nome, l'output è un messaggio di conferma (o di errore se il codice univoco non è presente)
 
-Tutte le seguenti richieste vengono effettuate tramite il protocollo HTTP e l'intestazione contiene il content-type che nella maggior parte dei casi è 'application/json' o 'text/plain' (viene utilizzato anche 'text/html' solamente per le get dei render delle GUI).
+Tutti i formati degli input (dove presenti) è x-www-form-urlencoded.
+
+Tutte le seguenti richieste vengono effettuate tramite il protocollo HTTP e l'intestazione contiene il content-type che nella maggior parte dei casi è 'application/json' o 'text/plain' (viene utilizzato anche 'text/html' solamente per le get dei render delle GUI). 
 
 Le ultime due funzionalità sono prive di interfaccia grafica, perciò devono essere effettuate da Postman.
 
