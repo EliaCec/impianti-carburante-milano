@@ -50,16 +50,22 @@ L'url per effettuare le richieste al server è: https://impianti-carburante-mila
 Le funzionalità esposte sono:
 
 - <b>get</b> (/getTutto) per cercare tutti gli impianti presenti nel comune di Milano (GUI: /menu)
+  Non è previsto alcun input, l'output è un oggetto in formato json contenente tutti gli impianti presenti (vuoto se non ci sono)
 
 - <b>get</b> (/getImpianto) per cercare uno specifico impianto tramite il codice univoco (GUI: /cercaImpianto)
+  L'input è il codice univoco (idImpianto), l'output è un oggetto in formato json contenente le informazioni relative all'impianto (vuoto se non è           presente)
 
 - <b>get</b> (/getImpiantiTamoil) per cercare tutti gli impianti della bandiera Tamoil (GUI: /cercaImpiantiTamoil)
+  Non è previsto alcun input, l'output è un oggetto in formato json contente le informazioni relative a tutti gli impianti Tamoil (vuoto se non ne è         presente nemmeno uno)
 
 - <b>post</b> (/postImpianto) per aggiungere un nuovo impianto (tutti i campi devono essere compilati e il codice immesso deve essere diverso da quelli già   esistenti) (GUI: /aggiungiImpianto)
+ Gli input sono tutte le informazioni (obbligatorie) relative all'impianto da aggiungere, l'output è un messaggio di conferma (o di errore se il codice    univoco è già presente)
 
 - <b>delete</b> (/eliminaImpianto) per cancellare un impianto tramite il codice univoco
+  L'input è il codice univoco (idImpianto) dell'impianto da modificare, l'output è un messaggio di conferma (o di errore se il codice univoco non è presente)
 
 - <b>put</b> (/modificaNomeImpianto) per modificare il nome di un impianto già esistente (la ricerca viene effettuata tramite il codice univoco)
+  Gli input sono il codice univoco dell'impianto a cui modificare il nome e il nuovo nome, l'output è un messaggio di conferma (o di errore se il codice univoco non è presente)
 
 Tutte le seguenti richieste vengono effettuate tramite il protocollo HTTP e l'intestazione contiene il content-type che nella maggior parte dei casi è 'application/json' o 'text/plain' (viene utilizzato anche 'text/html' solamente per le get dei render delle GUI).
 
